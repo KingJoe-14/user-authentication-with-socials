@@ -59,7 +59,6 @@ class GoogleLoginView(views.APIView):
                 defaults={'first_name': first_name, 'last_name': last_name}
             )
 
-            # Generate JWT tokens
             refresh = RefreshToken.for_user(user)
 
             return Response({

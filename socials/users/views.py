@@ -44,7 +44,6 @@ class GoogleLoginView(views.APIView):
             return Response({'error': 'Token is required'}, status=status.HTTP_400_BAD_REQUEST)
 
         try:
-            # Verify token using Google’s public keys
             idinfo = id_token.verify_oauth2_token(token, requests.Request(), settings.GOOGLE_CLIENT_ID)
 
             email = idinfo.get('email')

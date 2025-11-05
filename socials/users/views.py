@@ -33,10 +33,7 @@ class LoginView(views.APIView):
 
 
 class GoogleLoginView(views.APIView):
-    """
-    Accepts a Google ID token from frontend, verifies it,
-    and issues JWTs for your system.
-    """
+
     def post(self, request):
         token = request.data.get('token')
 

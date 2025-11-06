@@ -19,7 +19,6 @@ class CustomUserManager(BaseUserManager):
         return user
 
     def create_superuser(self, email, first_name, middle_name, last_name, phone, password=None):
-        # ✅ FIXED ARGUMENT ORDER
         user = self.create_user(
             email=email,
             first_name=first_name,

@@ -14,7 +14,7 @@ class CustomUserManager(BaseUserManager):
             last_name=last_name,
             phone=phone,
         )
-        user.set_password(password)  # ✅ hashes the password
+        user.set_password(password)
         user.save(using=self._db)
         return user
 

@@ -38,7 +38,7 @@ class GoogleLoginView(views.APIView):
         token = request.data.get('token')
 
         if not token:
-            return Response({'error': 'Token is required'}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'error': 'Provide Token'}, status=status.HTTP_400_BAD_REQUEST)
 
         try:
             idinfo = id_token.verify_oauth2_token(token, requests.Request(), settings.GOOGLE_CLIENT_ID)
